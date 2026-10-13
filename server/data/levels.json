@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "name": "First Drop",
+    "difficulty": "easy",
+    "parTime": 12,
+    "description": "Draw a simple ramp to guide the water straight into the glass.",
+    "targetWater": 20,
+    "maxInk": 300,
+    "starThresholds": {
+      "threeStars": 80,
+      "twoStars": 160,
+      "oneStar": 250
+    },
+    "tap": {
+      "x": 200,
+      "y": 100,
+      "waterDrops": 30
+    },
+    "glass": {
+      "x": 200,
+      "y": 450,
+      "width": 80,
+      "height": 90
+    },
+    "obstacles": [],
+    "referenceSolution": [
+      { "x": 180, "y": 200 },
+      { "x": 210, "y": 400 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "The Divider",
+    "difficulty": "medium",
+    "parTime": 18,
+    "description": "A block splits the path. Curve your line to direct the flow.",
+    "targetWater": 25,
+    "maxInk": 350,
+    "starThresholds": {
+      "threeStars": 100,
+      "twoStars": 200,
+      "oneStar": 300
+    },
+    "tap": {
+      "x": 250,
+      "y": 80,
+      "waterDrops": 35
+    },
+    "glass": {
+      "x": 350,
+      "y": 460,
+      "width": 80,
+      "height": 90
+    },
+    "obstacles": [
+      {
+        "id": "obs-1",
+        "type": "box",
+        "x": 250,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      }
+    ],
+    "referenceSolution": [
+      { "x": 230, "y": 150 },
+      { "x": 330, "y": 420 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Slanted Funnel",
+    "difficulty": "hard",
+    "parTime": 22,
+    "description": "Angle your line carefully so the water does not splash out.",
+    "targetWater": 30,
+    "maxInk": 400,
+    "starThresholds": {
+      "threeStars": 120,
+      "twoStars": 240,
+      "oneStar": 350
+    },
+    "tap": {
+      "x": 150,
+      "y": 80,
+      "waterDrops": 40
+    },
+    "glass": {
+      "x": 400,
+      "y": 450,
+      "width": 80,
+      "height": 90
+    },
+    "obstacles": [
+      {
+        "id": "obs-2",
+        "type": "beam",
+        "x": 240,
+        "y": 220,
+        "width": 120,
+        "height": 20,
+        "rotation": 25
+      }
+    ],
+    "referenceSolution": [
+      { "x": 160, "y": 140 },
+      { "x": 380, "y": 420 }
+    ]
+  }
+]

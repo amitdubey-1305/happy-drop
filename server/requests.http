@@ -1,0 +1,131 @@
+### Happy Drop REST API Requests
+### Works with VS Code / IDE "REST Client" extension (humao.rest-client)
+
+@baseUrl = http://localhost:5000
+@authToken = YOUR_JWT_TOKEN_HERE
+
+###############################################################################
+# 1. HEALTH CHECK
+###############################################################################
+
+### Health status check
+GET {{baseUrl}}/api/health
+Accept: application/json
+
+###############################################################################
+# 2. AUTHENTICATION
+###############################################################################
+
+### Register a new player
+# @name register
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Puzzle Master",
+  "email": "master@happydrop.com",
+  "password": "Password123"
+}
+
+### Login with existing player
+# @name login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "master@happydrop.com",
+  "password": "Password123"
+}
+
+### Get profile of authenticated user
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+###############################################################################
+# 3. LEVELS CATALOG
+###############################################################################
+
+### Get all levels with unlocked status for current user
+GET {{baseUrl}}/api/levels
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### Get a single level configuration (Level 1)
+GET {{baseUrl}}/api/levels/1
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### Get a procedurally generated level (Seed: 42)
+GET {{baseUrl}}/api/levels/generated/42
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+###############################################################################
+# 4. GAME LIFECYCLE
+###############################################################################
+
+### Start a new game session (Level 1)
+# @name startGame
+POST {{baseUrl}}/api/games/start
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "levelId": 1
+}
+
+### Complete game session with validation
+# Replace sessionId with the ID returned by /api/games/start
+POST {{baseUrl}}/api/games/complete
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "sessionId": "67ad10000000000000000001",
+  "levelId": 1,
+  "inkUsed": 40,
+  "completionTime": 10
+}
+
+###############################################################################
+# 5. PLAYER PROGRESS
+###############################################################################
+
+### Get all level progress records for logged-in user
+GET {{baseUrl}}/api/progress
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### Get progress for a specific level (Level 1)
+GET {{baseUrl}}/api/progress/1
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+###############################################################################
+# 6. STATS & DASHBOARD
+###############################################################################
+
+### Get player stats dashboard with achievements and progress percent
+GET {{baseUrl}}/api/stats/me
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### Get dashboard aggregated summary
+GET {{baseUrl}}/api/dashboard
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+###############################################################################
+# 7. LEADERBOARD
+###############################################################################
+
+### Get top players on global leaderboard (Default limit 20)
+GET {{baseUrl}}/api/leaderboard?limit=20
+Authorization: Bearer {{authToken}}
+Accept: application/json
+
+### Get current user's personal leaderboard standing
+GET {{baseUrl}}/api/leaderboard/me
+Authorization: Bearer {{authToken}}
+Accept: application/json

@@ -2,110 +2,443 @@
   {
     "id": 1,
     "name": "First Drop",
-    "difficulty": "easy",
+    "difficulty": "tutorial",
     "parTime": 12,
     "description": "Draw a simple ramp to guide the water straight into the glass.",
     "targetWater": 20,
     "maxInk": 300,
-    "starThresholds": {
-      "threeStars": 80,
-      "twoStars": 160,
-      "oneStar": 250
-    },
-    "tap": {
-      "x": 200,
-      "y": 100,
-      "waterDrops": 30
-    },
-    "glass": {
-      "x": 200,
-      "y": 450,
-      "width": 80,
-      "height": 90
-    },
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 80, "twoStars": 160, "oneStar": 250 },
+    "tap": { "x": 150, "y": 133, "waterDrops": 30 },
+    "glass": { "x": 150, "y": 600, "width": 60, "height": 120 },
     "obstacles": [],
     "referenceSolution": [
-      { "x": 180, "y": 200 },
-      { "x": 210, "y": 400 }
+      { "x": 135, "y": 267 },
+      { "x": 158, "y": 533 }
     ]
   },
   {
     "id": 2,
     "name": "The Divider",
-    "difficulty": "medium",
-    "parTime": 18,
+    "difficulty": "easy",
+    "parTime": 14,
     "description": "A block splits the path. Curve your line to direct the flow.",
     "targetWater": 25,
     "maxInk": 350,
-    "starThresholds": {
-      "threeStars": 100,
-      "twoStars": 200,
-      "oneStar": 300
-    },
-    "tap": {
-      "x": 250,
-      "y": 80,
-      "waterDrops": 35
-    },
-    "glass": {
-      "x": 350,
-      "y": 460,
-      "width": 80,
-      "height": 90
-    },
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 100, "twoStars": 200, "oneStar": 300 },
+    "tap": { "x": 188, "y": 107, "waterDrops": 35 },
+    "glass": { "x": 263, "y": 613, "width": 60, "height": 120 },
     "obstacles": [
       {
         "id": "obs-1",
         "type": "box",
-        "x": 250,
-        "y": 250,
-        "width": 60,
-        "height": 60
+        "x": 188,
+        "y": 333,
+        "width": 45,
+        "height": 80
       }
     ],
     "referenceSolution": [
-      { "x": 230, "y": 150 },
-      { "x": 330, "y": 420 }
+      { "x": 173, "y": 200 },
+      { "x": 248, "y": 560 }
     ]
   },
   {
     "id": 3,
     "name": "Slanted Funnel",
-    "difficulty": "hard",
-    "parTime": 22,
+    "difficulty": "easy",
+    "parTime": 16,
     "description": "Angle your line carefully so the water does not splash out.",
     "targetWater": 30,
     "maxInk": 400,
-    "starThresholds": {
-      "threeStars": 120,
-      "twoStars": 240,
-      "oneStar": 350
-    },
-    "tap": {
-      "x": 150,
-      "y": 80,
-      "waterDrops": 40
-    },
-    "glass": {
-      "x": 400,
-      "y": 450,
-      "width": 80,
-      "height": 90
-    },
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 120, "twoStars": 240, "oneStar": 350 },
+    "tap": { "x": 113, "y": 107, "waterDrops": 40 },
+    "glass": { "x": 300, "y": 600, "width": 60, "height": 120 },
     "obstacles": [
       {
         "id": "obs-2",
         "type": "beam",
-        "x": 240,
-        "y": 220,
-        "width": 120,
-        "height": 20,
+        "x": 180,
+        "y": 293,
+        "width": 90,
+        "height": 27,
         "rotation": 25
       }
     ],
     "referenceSolution": [
-      { "x": 160, "y": 140 },
-      { "x": 380, "y": 420 }
+      { "x": 120, "y": 187 },
+      { "x": 285, "y": 560 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Double Trouble",
+    "difficulty": "easy",
+    "parTime": 18,
+    "description": "Two pillars stand in your way. Guide the stream right between them.",
+    "targetWater": 25,
+    "maxInk": 380,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 110, "twoStars": 220, "oneStar": 320 },
+    "tap": { "x": 300, "y": 100, "waterDrops": 35 },
+    "glass": { "x": 300, "y": 620, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-4a", "type": "box", "x": 220, "y": 320, "width": 50, "height": 90 },
+      { "id": "obs-4b", "type": "box", "x": 380, "y": 320, "width": 50, "height": 90 }
+    ],
+    "referenceSolution": [
+      { "x": 270, "y": 210 },
+      { "x": 300, "y": 480 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Spike Valley",
+    "difficulty": "easy",
+    "parTime": 18,
+    "description": "Watch out for the hot spikes below! Keep the stream high.",
+    "targetWater": 25,
+    "maxInk": 420,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 125, "twoStars": 250, "oneStar": 350 },
+    "tap": { "x": 140, "y": 110, "waterDrops": 35 },
+    "glass": { "x": 460, "y": 590, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-5-spike", "type": "spike", "x": 300, "y": 420, "width": 100, "height": 30 }
+    ],
+    "referenceSolution": [
+      { "x": 130, "y": 220 },
+      { "x": 280, "y": 260 },
+      { "x": 440, "y": 520 }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "The Staircase",
+    "difficulty": "medium",
+    "parTime": 20,
+    "description": "Cascade the stream down steps to build gentle momentum.",
+    "targetWater": 28,
+    "maxInk": 420,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 130, "twoStars": 260, "oneStar": 360 },
+    "tap": { "x": 130, "y": 110, "waterDrops": 38 },
+    "glass": { "x": 470, "y": 620, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-6a", "type": "platform", "x": 210, "y": 260, "width": 80, "height": 20 },
+      { "id": "obs-6b", "type": "platform", "x": 330, "y": 400, "width": 80, "height": 20 }
+    ],
+    "referenceSolution": [
+      { "x": 120, "y": 210 },
+      { "x": 450, "y": 540 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Pendulum Swing",
+    "difficulty": "medium",
+    "parTime": 22,
+    "description": "A rotating spinner guards the path. Timing and curve matter.",
+    "targetWater": 30,
+    "maxInk": 450,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 140, "twoStars": 270, "oneStar": 380 },
+    "tap": { "x": 300, "y": 90, "waterDrops": 40 },
+    "glass": { "x": 300, "y": 640, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-7-rot", "type": "rotating", "x": 300, "y": 340, "width": 140, "height": 22, "speed": 0.02 }
+    ],
+    "referenceSolution": [
+      { "x": 240, "y": 220 },
+      { "x": 180, "y": 380 },
+      { "x": 280, "y": 560 }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Moving Shelf",
+    "difficulty": "medium",
+    "parTime": 22,
+    "description": "A moving block slides left and right. Catch the water smoothly.",
+    "targetWater": 28,
+    "maxInk": 440,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 135, "twoStars": 265, "oneStar": 370 },
+    "tap": { "x": 160, "y": 100, "waterDrops": 38 },
+    "glass": { "x": 440, "y": 610, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-8-mov", "type": "moving", "x": 300, "y": 330, "width": 90, "height": 22, "dx": 80, "speed": 0.03 }
+    ],
+    "referenceSolution": [
+      { "x": 150, "y": 220 },
+      { "x": 310, "y": 260 },
+      { "x": 420, "y": 530 }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "The Funnel",
+    "difficulty": "medium",
+    "parTime": 20,
+    "description": "Funnel the drops through a narrow corridor directly above the glass.",
+    "targetWater": 30,
+    "maxInk": 400,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 120, "twoStars": 240, "oneStar": 340 },
+    "tap": { "x": 200, "y": 100, "waterDrops": 40 },
+    "glass": { "x": 400, "y": 620, "width": 60, "height": 120 },
+    "obstacles": [
+      { "id": "obs-9a", "type": "beam", "x": 280, "y": 300, "width": 100, "height": 22, "rotation": -25 },
+      { "id": "obs-9b", "type": "beam", "x": 440, "y": 380, "width": 90, "height": 22, "rotation": 25 }
+    ],
+    "referenceSolution": [
+      { "x": 190, "y": 200 },
+      { "x": 340, "y": 320 },
+      { "x": 380, "y": 540 }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Spike Crossing",
+    "difficulty": "medium",
+    "parTime": 24,
+    "description": "Spikes above and below. Draw a bridge to span the gap.",
+    "targetWater": 30,
+    "maxInk": 460,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 140, "twoStars": 280, "oneStar": 390 },
+    "tap": { "x": 120, "y": 110, "waterDrops": 40 },
+    "glass": { "x": 480, "y": 610, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-10a", "type": "spike", "x": 240, "y": 380, "width": 70, "height": 26 },
+      { "id": "obs-10b", "type": "spike", "x": 370, "y": 440, "width": 70, "height": 26 }
+    ],
+    "referenceSolution": [
+      { "x": 110, "y": 210 },
+      { "x": 300, "y": 260 },
+      { "x": 460, "y": 530 }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "The Zig Zag",
+    "difficulty": "medium",
+    "parTime": 24,
+    "description": "Bounce water left, then right, then drop it into the glass.",
+    "targetWater": 30,
+    "maxInk": 480,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 150, "twoStars": 300, "oneStar": 410 },
+    "tap": { "x": 150, "y": 90, "waterDrops": 40 },
+    "glass": { "x": 180, "y": 630, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-11-wall", "type": "platform", "x": 320, "y": 340, "width": 180, "height": 24 }
+    ],
+    "referenceSolution": [
+      { "x": 140, "y": 190 },
+      { "x": 430, "y": 260 },
+      { "x": 390, "y": 420 },
+      { "x": 190, "y": 550 }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Floating Island",
+    "difficulty": "medium",
+    "parTime": 22,
+    "description": "A central island splits the flow. Pick a side and guide it home.",
+    "targetWater": 32,
+    "maxInk": 450,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 140, "twoStars": 270, "oneStar": 380 },
+    "tap": { "x": 300, "y": 100, "waterDrops": 42 },
+    "glass": { "x": 170, "y": 620, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-12-island", "type": "box", "x": 300, "y": 320, "width": 100, "height": 80 }
+    ],
+    "referenceSolution": [
+      { "x": 260, "y": 200 },
+      { "x": 180, "y": 340 },
+      { "x": 170, "y": 540 }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Twin Rotators",
+    "difficulty": "hard",
+    "parTime": 26,
+    "description": "Two opposing rotating arms. Find the narrow path through.",
+    "targetWater": 32,
+    "maxInk": 500,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 160, "twoStars": 320, "oneStar": 430 },
+    "tap": { "x": 300, "y": 90, "waterDrops": 42 },
+    "glass": { "x": 300, "y": 640, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-13-rot1", "type": "rotating", "x": 200, "y": 320, "width": 90, "height": 20, "speed": 0.02 },
+      { "id": "obs-13-rot2", "type": "rotating", "x": 400, "y": 320, "width": 90, "height": 20, "speed": -0.02 }
+    ],
+    "referenceSolution": [
+      { "x": 280, "y": 200 },
+      { "x": 300, "y": 550 }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "The Maze Drop",
+    "difficulty": "hard",
+    "parTime": 28,
+    "description": "Staggered beams block a straight shot. Weave your line carefully.",
+    "targetWater": 35,
+    "maxInk": 520,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 170, "twoStars": 330, "oneStar": 450 },
+    "tap": { "x": 140, "y": 100, "waterDrops": 45 },
+    "glass": { "x": 460, "y": 620, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-14a", "type": "platform", "x": 220, "y": 250, "width": 110, "height": 20 },
+      { "id": "obs-14b", "type": "platform", "x": 380, "y": 370, "width": 110, "height": 20 },
+      { "id": "obs-14c", "type": "spike", "x": 240, "y": 480, "width": 80, "height": 24 }
+    ],
+    "referenceSolution": [
+      { "x": 130, "y": 190 },
+      { "x": 340, "y": 220 },
+      { "x": 440, "y": 540 }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Slider & Spikes",
+    "difficulty": "hard",
+    "parTime": 28,
+    "description": "A horizontal moving bar pushes water toward dangerous spikes.",
+    "targetWater": 35,
+    "maxInk": 520,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 170, "twoStars": 340, "oneStar": 450 },
+    "tap": { "x": 180, "y": 90, "waterDrops": 45 },
+    "glass": { "x": 420, "y": 630, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-15-mov", "type": "moving", "x": 280, "y": 280, "width": 90, "height": 22, "dx": 70, "speed": 0.035 },
+      { "id": "obs-15-spk", "type": "spike", "x": 280, "y": 440, "width": 110, "height": 28 }
+    ],
+    "referenceSolution": [
+      { "x": 160, "y": 200 },
+      { "x": 420, "y": 230 },
+      { "x": 410, "y": 550 }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "The High Wall",
+    "difficulty": "hard",
+    "parTime": 26,
+    "description": "A giant vertical barrier divides the entire arena.",
+    "targetWater": 35,
+    "maxInk": 540,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 180, "twoStars": 350, "oneStar": 460 },
+    "tap": { "x": 150, "y": 100, "waterDrops": 45 },
+    "glass": { "x": 450, "y": 620, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-16-wall", "type": "box", "x": 300, "y": 400, "width": 40, "height": 280 }
+    ],
+    "referenceSolution": [
+      { "x": 140, "y": 210 },
+      { "x": 320, "y": 230 },
+      { "x": 430, "y": 540 }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Precision Chute",
+    "difficulty": "hard",
+    "parTime": 30,
+    "description": "A narrow chute lined with rotating blockers. Perfect accuracy required.",
+    "targetWater": 36,
+    "maxInk": 540,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 180, "twoStars": 350, "oneStar": 470 },
+    "tap": { "x": 250, "y": 90, "waterDrops": 46 },
+    "glass": { "x": 350, "y": 640, "width": 60, "height": 120 },
+    "obstacles": [
+      { "id": "obs-17-rot", "type": "rotating", "x": 250, "y": 300, "width": 80, "height": 18, "speed": 0.025 },
+      { "id": "obs-17-spk", "type": "spike", "x": 430, "y": 420, "width": 80, "height": 26 }
+    ],
+    "referenceSolution": [
+      { "x": 220, "y": 210 },
+      { "x": 330, "y": 360 },
+      { "x": 340, "y": 550 }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Double Moving Gates",
+    "difficulty": "hard",
+    "parTime": 30,
+    "description": "Two synchronized moving gates. Create a canopy to slip past.",
+    "targetWater": 38,
+    "maxInk": 560,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 190, "twoStars": 360, "oneStar": 480 },
+    "tap": { "x": 200, "y": 90, "waterDrops": 48 },
+    "glass": { "x": 400, "y": 630, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-18a", "type": "moving", "x": 240, "y": 270, "width": 80, "height": 20, "dx": 60, "speed": 0.03 },
+      { "id": "obs-18b", "type": "moving", "x": 360, "y": 410, "width": 80, "height": 20, "dx": -60, "speed": 0.03 }
+    ],
+    "referenceSolution": [
+      { "x": 180, "y": 190 },
+      { "x": 420, "y": 220 },
+      { "x": 390, "y": 550 }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "The Gauntlet",
+    "difficulty": "hard",
+    "parTime": 32,
+    "description": "Spikes, spinners, and narrow gaps. Only the steadiest hand succeeds.",
+    "targetWater": 40,
+    "maxInk": 580,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 200, "twoStars": 380, "oneStar": 500 },
+    "tap": { "x": 120, "y": 90, "waterDrops": 50 },
+    "glass": { "x": 480, "y": 640, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-19-rot", "type": "rotating", "x": 260, "y": 280, "width": 90, "height": 20, "speed": 0.02 },
+      { "id": "obs-19-spk1", "type": "spike", "x": 220, "y": 450, "width": 70, "height": 24 },
+      { "id": "obs-19-spk2", "type": "spike", "x": 380, "y": 450, "width": 70, "height": 24 }
+    ],
+    "referenceSolution": [
+      { "x": 110, "y": 180 },
+      { "x": 360, "y": 210 },
+      { "x": 460, "y": 550 }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Grand Cascade",
+    "difficulty": "hard",
+    "parTime": 35,
+    "description": "The ultimate puzzle! Guide 50 drops across the entire arena into the grand cup.",
+    "targetWater": 40,
+    "maxInk": 600,
+    "world": { "width": 600, "height": 800 },
+    "starThresholds": { "threeStars": 220, "twoStars": 400, "oneStar": 520 },
+    "tap": { "x": 100, "y": 90, "waterDrops": 50 },
+    "glass": { "x": 500, "y": 640, "width": 64, "height": 120 },
+    "obstacles": [
+      { "id": "obs-20-mov", "type": "moving", "x": 240, "y": 260, "width": 90, "height": 20, "dx": 50, "speed": 0.03 },
+      { "id": "obs-20-rot", "type": "rotating", "x": 380, "y": 380, "width": 100, "height": 20, "speed": -0.02 },
+      { "id": "obs-20-spk", "type": "spike", "x": 300, "y": 500, "width": 90, "height": 26 }
+    ],
+    "referenceSolution": [
+      { "x": 90, "y": 180 },
+      { "x": 280, "y": 210 },
+      { "x": 480, "y": 550 }
     ]
   }
 ]

@@ -1,28 +1,14 @@
 const app = require('./app');
-
-// Will be defined in config/env and config/db in the upcoming steps
-let env;
-try {
-  env = require('./config/env');
-} catch {
-  require('dotenv').config();
-  env = { PORT: process.env.PORT || 5000 };
-}
-
-let connectDB;
-try {
-  const dbConfig = require('./config/db');
-  connectDB = dbConfig.connectDB || dbConfig;
-} catch {
-  connectDB = async () => {};
-}
+const env = require('./config/env');
+const { connectDB } = require('./config/db');
 
 const PORT = env.PORT || 5000;
+let server;
 
 const startServer = async () => {
   try {
     await connectDB();
-    const server = app.listen(PORT, () => {
+    server = app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
     return server;
@@ -31,6 +17,32 @@ const startServer = async () => {
     process.exit(1);
   }
 };
+
+const handleFatalError = (type, error) => {
+  console.error(`[FATAL] ${type}:`, error);
+  if (server && typeof server.close === 'function') {
+    server.close(() => {
+      console.log('HTTP server closed');
+      process.exit(1);
+    });
+    // Force exit if connections do not drain within 5 seconds
+    setTimeout(() => {
+      console.error('Forcing shutdown after timeout');
+      process.exit(1);
+    }, 5000).unref();
+  } else {
+    process.exit(1);
+  }
+};
+
+// Handle uncaught exceptions and unhandled promise rejections
+process.on('uncaughtException', (err) => {
+  handleFatalError('Uncaught Exception', err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  handleFatalError('Unhandled Rejection', reason);
+});
 
 if (require.main === module) {
   startServer();

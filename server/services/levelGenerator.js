@@ -45,9 +45,9 @@ const isOverlapping = (rectA, rectB, padding = 15) => {
 const generateLevel = (seed) => {
   const rng = createMulberry32(seed);
 
-  // 1. Tap: near the top of the canvas
-  const tapX = Math.round(randomRange(rng, 100, 400));
-  const tapY = Math.round(randomRange(rng, 70, 120));
+  // 1. Tap: near the top of the 600x800 canvas
+  const tapX = Math.round(randomRange(rng, 100, 500));
+  const tapY = Math.round(randomRange(rng, 80, 160));
   const tapWaterDrops = randomInt(rng, 30, 45);
 
   const tapRect = {
@@ -59,17 +59,17 @@ const generateLevel = (seed) => {
 
   // 2. Glass: near the bottom, never directly under the tap (min horizontal distance 80px)
   let glassX;
-  if (tapX < 250) {
-    const minGlassX = Math.max(tapX + 80, 260);
-    glassX = Math.round(randomRange(rng, minGlassX, 420));
+  if (tapX < 300) {
+    const minGlassX = Math.max(tapX + 80, 310);
+    glassX = Math.round(randomRange(rng, minGlassX, 520));
   } else {
-    const maxGlassX = Math.min(tapX - 80, 240);
+    const maxGlassX = Math.min(tapX - 80, 290);
     glassX = Math.round(randomRange(rng, 80, maxGlassX));
   }
 
-  const glassY = Math.round(randomRange(rng, 500, 580));
-  const glassWidth = 80;
-  const glassHeight = 90;
+  const glassY = Math.round(randomRange(rng, 580, 680));
+  const glassWidth = 60;
+  const glassHeight = 120;
 
   const glassRect = {
     x: glassX,
@@ -88,8 +88,8 @@ const generateLevel = (seed) => {
 
   for (let i = 0; i < obstacleCount; i++) {
     const type = obstacleTypes[randomInt(rng, 0, obstacleTypes.length - 1)];
-    const width = type === 'platform' ? randomInt(rng, 70, 120) : randomInt(rng, 40, 70);
-    const height = type === 'platform' ? randomInt(rng, 15, 25) : randomInt(rng, 40, 70);
+    const width = type === 'platform' ? randomInt(rng, 60, 110) : randomInt(rng, 35, 60);
+    const height = type === 'platform' ? randomInt(rng, 15, 30) : randomInt(rng, 35, 70);
 
     let candidateRect;
     let attempts = 0;
@@ -97,7 +97,7 @@ const generateLevel = (seed) => {
 
     while (attempts < 25 && !placed) {
       attempts++;
-      const x = Math.round(randomRange(rng, 80, 420 - width));
+      const x = Math.round(randomRange(rng, 60, 540 - width));
       const y = Math.round(randomRange(rng, safeZoneMinY, safeZoneMaxY - height));
 
       candidateRect = { x, y, width, height };
@@ -141,6 +141,10 @@ const generateLevel = (seed) => {
     difficulty: 'procedural',
     targetWater: randomInt(rng, 20, 30),
     maxInk,
+    world: {
+      width: 600,
+      height: 800,
+    },
     starThresholds,
     tap: {
       x: tapX,

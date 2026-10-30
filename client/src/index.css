@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-blue: #2BA7F0;
+  --color-navy: #12355B;
+  --color-sunny-yellow: #FFC93C;
+  --color-coral-pink: #FF6B9D;
+  --color-mint: #2FBF7F;
+  --color-soft: #EAF6FF;
+
+  --font-heading: 'Fredoka', cursive, system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --shadow-soft: 0 8px 24px -4px rgba(18, 53, 91, 0.08), 0 4px 12px -2px rgba(18, 53, 91, 0.04);
+  --shadow-soft-lg: 0 16px 36px -6px rgba(18, 53, 91, 0.12), 0 8px 18px -4px rgba(18, 53, 91, 0.06);
+}
+
+:root {
+  --color-sky-blue: #2BA7F0;
+  --color-navy: #12355B;
+  --color-sunny-yellow: #FFC93C;
+  --color-coral-pink: #FF6B9D;
+  --color-mint: #2FBF7F;
+  --color-soft: #EAF6FF;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-soft);
+    color: var(--color-navy);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    overscroll-behavior: none;
+  }
+
+  /* Prevent drag/selection on game canvas and lock touch actions */
+  canvas {
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Safe area inset utilities */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-left {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.safe-right {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+

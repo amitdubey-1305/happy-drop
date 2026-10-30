@@ -50,6 +50,10 @@ const getLevelForUser = async (userId, levelId) => {
   }
 
   const levelDetails = { ...level };
+  // Keep hint points accessible to user while keeping secret referenceSolution protected
+  if (!levelDetails.hint && level.referenceSolution) {
+    levelDetails.hint = { points: level.referenceSolution };
+  }
   delete levelDetails.referenceSolution;
 
   return levelDetails;

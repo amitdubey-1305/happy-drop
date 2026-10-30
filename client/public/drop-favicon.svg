@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2BA7F0" />
+    </linearGradient>
+  </defs>
+  <!-- Water Drop Outline & Fill -->
+  <path d="M32 4 C32 4, 10 32, 10 44 C10 54 20 62 32 62 C44 62 54 54 54 44 C54 32, 32 4, 32 4 Z" fill="url(#dropGrad)" stroke="#12355B" stroke-width="3" stroke-linejoin="round" />
+  <!-- Gloss highlight -->
+  <path d="M22 36 C22 30, 28 20, 32 16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.65" />
+  <!-- Smiling Eyes -->
+  <circle cx="26" cy="42" r="2.5" fill="#12355B" />
+  <circle cx="38" cy="42" r="2.5" fill="#12355B" />
+  <!-- Cute Happy Smile -->
+  <path d="M28 47 Q32 52 36 47" stroke="#12355B" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <!-- Cheek Blush -->
+  <circle cx="21" cy="46" r="2" fill="#FF6B9D" opacity="0.7" />
+  <circle cx="43" cy="46" r="2" fill="#FF6B9D" opacity="0.7" />
+</svg>
